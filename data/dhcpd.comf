@@ -1,0 +1,21 @@
+# DHCP Server - Configuration file for Primary and secondary
+#
+# File $Id: dhcpd.conf,v 1.21 2009/07/09 16:26:57 root Exp root $
+
+# Global configuration
+set vendorclass = option vendor-class-identifier;
+
+# Dynamic DNS Updates
+# include "/etc/dhcp/dhcpupdate.dnskey";
+# include "/etc/dhcp/dhcpd.conf_ddns";
+
+# DHCP Failover, Primary or Secondary
+# include "/etc/dhcp/dhcpd.conf_failover";
+
+# Subnet declaration
+include "/etc/dhcp/dhcpd.conf_subnet";
+
+# Static IP addresses
+#include "/etc/dhcp/dhcpd.conf_static";
+
+# EOF
