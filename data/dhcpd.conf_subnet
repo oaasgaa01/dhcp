@@ -1,7 +1,7 @@
 subnet 192.168.1.0 netmask 255.255.255.0        # zone to issue address from
 {
         pool {
-#                failover peer "dhcp";           # Pool for dhcp leases with failover bootp not allowed
+                #failover peer "dhcp";           # Pool for dhcp leases with failover bootp not allowed
                 deny dynamic bootp clients;
                 range 192.168.1.100 192.168.1.150;
         }
