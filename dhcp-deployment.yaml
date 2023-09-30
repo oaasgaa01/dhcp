@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dhcp
+spec:
+  selector:
+    matchLabels:
+      app: dhcp
+  template:
+    metadata:
+      labels:
+        app: dhcp
+    spec:
+      containers:
+      - name: dhcp
+        image: oaasgaa01/dhcp:1.0.0
+        ports:
+        - containerPort: 67
+
+      imagePullSecrets:
+        - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dhcp-service
+spec:
+  selector:
+    app: dhcp
+  ports:
+  - port: 67
+    protocol: UDP
+    targetPort: 67

@@ -1,4 +1,4 @@
-FROM networkboot/dhcpd
+FROM networkboot/dhcpd:1.2.0
 
 # WORKDIR /code
 

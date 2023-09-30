@@ -1,5 +1,13 @@
 # dhcp
 
+udp port 67 server
+udp port 68 client
+
+
+## npflan
+
+[NPF DHCPd on Kubernetes](https://github.com/npflan/dhcp)
+
 ## networkboot/dhcpd
 
 https://hub.docker.com/r/networkboot/dhcpd/
@@ -12,7 +20,7 @@ docker service create \
  --name dhcp \
  --with-registry-auth \
  --network host \
- oaasgaa01/dhcp:latest dhcp
+ oaasgaa01/dhcp:latest dhcp 
 
 docker service update \
  --with-registry-auth \
